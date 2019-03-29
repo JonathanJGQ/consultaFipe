@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: sif.core
+Implementation-Version: 0.0.1
+Built-By: dev08
+Implementation-Vendor-Id: com.sif.core
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/sif.core
+Created-By: Maven Integration for Eclipse
+

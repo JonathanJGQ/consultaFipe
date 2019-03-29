@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_consolidado" pageWidth="690" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="650" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="68bb447c-4e62-417b-be94-5c6c6673f687">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="84"/>
+	<parameter name="COD_FINANCEIRO" class="java.lang.String"/>
+	<parameter name="NOME_FINANCEIRA" class="java.lang.String"/>
+	<parameter name="QTDE_CONTRATOS" class="java.lang.String"/>
+	<parameter name="QTDE_ADITIVOS" class="java.lang.String"/>
+	<parameter name="list" class="java.util.ArrayList" nestedType="java.lang.String"/>
+	<parameter name="PATH_LOGO" class="java.lang.String"/>
+	<parameter name="TIPO_RELATORIO" class="java.lang.String"/>
+	<parameter name="PERIODO" class="java.lang.String"/>
+	<parameter name="DATA_EMISSAO" class="java.lang.String"/>
+	<parameter name="NIVEL_RELATORIO" class="java.lang.String"/>
+	<parameter name="UF_RELATORIO" class="java.lang.String"/>
+	<parameter name="NUMERO_CONTRATOS" class="java.lang.Long"/>
+	<parameter name="SOMA_INSTITUICAO" class="java.lang.Integer"/>
+	<parameter name="SOMA_TOTAL" class="java.lang.Long"/>
+	<parameter name="DATA_POR_EXTENSO" class="java.lang.String"/>
+	<parameter name="HASH_RELATORIO" class="java.lang.String"/>
+	<parameter name="IP_MAQUINA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nomeFinanceira" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeFinanceira]]></fieldDescription>
+	</field>
+	<field name="numAditivos" class="java.lang.Long">
+		<fieldDescription><![CDATA[numAditivos]]></fieldDescription>
+	</field>
+	<field name="codFinanceira" class="java.lang.String">
+		<fieldDescription><![CDATA[codFinanceira]]></fieldDescription>
+	</field>
+	<field name="numContratos" class="java.lang.Long">
+		<fieldDescription><![CDATA[numContratos]]></fieldDescription>
+	</field>
+	<variable name="QUANT_CONTRATOS" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{numContratos}]]></variableExpression>
+		<initialValueExpression><![CDATA[new java.lang.Long(0)]]></initialValueExpression>
+	</variable>
+	<variable name="QUANT_ADITIVOS" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{numAditivos}]]></variableExpression>
+		<initialValueExpression><![CDATA[new java.lang.Long(0)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="149" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="110" width="359" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="71f62f98-9483-42e9-9bb8-7e06506778af"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO POR FINANCEIRAS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="10" y="0" width="629" height="85" uuid="25ea3f61-2a25-4363-b831-4f7326a8b2dd"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="0" width="360" height="85" uuid="b4c40ee6-e593-4856-86a9-180ab1ec3a78"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="285" y="2" width="145" height="13" uuid="69555f52-8694-4efc-b475-fb91d21de38b"/>
+				<box leftPadding="5"/>
+				<text><![CDATA[TIPO DE RELATÓRIO:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="280" y="17" width="234" height="17" uuid="0b34062b-0438-446f-b87d-f5f9b1b5ebf2"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="34" width="234" height="17" uuid="ba681432-a929-41da-ae14-8c3d7d893ec2"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="51" width="234" height="17" uuid="6417e2a6-0398-4782-9350-14746040c1cd"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="68" width="234" height="17" uuid="69f80e68-2344-46d4-8df5-3f073d2274ab"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="440" y="51" width="200" height="17" uuid="4e95ba30-5d1d-424e-ac27-5afdc9b45d8a"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="440" y="68" width="200" height="17" uuid="ff302fed-f9e6-4c43-9adc-9f34e0e6024f"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="440" y="34" width="200" height="17" uuid="323920ef-466e-41ba-a170-84e3771d6adf"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="440" y="17" width="200" height="17" uuid="31ccc186-01e2-48de-ac94-261cc151a02e"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="440" y="0" width="200" height="17" uuid="62f10493-c50c-4049-b1d7-33bdb7ef1148"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="285" y="19" width="145" height="13" uuid="29975c91-144f-4641-9ac5-378f2976a61c"/>
+				<box leftPadding="5"/>
+				<text><![CDATA[PERÍODO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="53" width="145" height="13" uuid="11871eda-2c8f-4dbe-b1e1-d35939b64f90"/>
+				<box leftPadding="5"/>
+				<text><![CDATA[NÍVEL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="36" width="145" height="13" uuid="f3b14e82-df70-4d5a-9e3a-55d4116a4be5"/>
+				<box leftPadding="5"/>
+				<text><![CDATA[DATA DE EMISSÃO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="70" width="145" height="13" uuid="9f709a24-bc96-496e-a137-075d390f1599"/>
+				<box leftPadding="5"/>
+				<text><![CDATA[UF:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="11" y="1" width="264" height="84" uuid="fe6326fc-2d71-4a67-bb8a-b6a4a5a0126c"/>
+				<imageExpression><![CDATA[$P{PATH_LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="450" y="2" width="188" height="12" forecolor="#000000" uuid="39aaf675-0f9d-42e2-934e-4d61cfca4f38"/>
+				<box leftPadding="5"/>
+				<textFieldExpression><![CDATA[$P{TIPO_RELATORIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="19" width="188" height="12" forecolor="#000000" uuid="d5254b97-da9d-404a-880a-0c406347e746"/>
+				<box leftPadding="5"/>
+				<textFieldExpression><![CDATA[$P{PERIODO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="36" width="188" height="12" forecolor="#000000" uuid="c60ac18d-7f1f-47e1-bbc3-4213473187d8"/>
+				<box leftPadding="5"/>
+				<textFieldExpression><![CDATA[$P{DATA_EMISSAO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="53" width="188" height="12" forecolor="#000000" uuid="c2c9e55f-e984-448f-a462-c42c36ce4811"/>
+				<box leftPadding="5"/>
+				<textFieldExpression><![CDATA[$P{NIVEL_RELATORIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="70" width="188" height="12" forecolor="#000000" uuid="84e717c8-2b42-4ccb-92c5-a011e8bc3e54"/>
+				<box leftPadding="5"/>
+				<textFieldExpression><![CDATA[$P{UF_RELATORIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="86" height="15" forecolor="#7A7A7A" uuid="dde0b2c5-fb0e-46fc-805e-77e9cb0ff787">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COD FINANC.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="0" width="368" height="15" forecolor="#7A7A7A" uuid="91287d58-d1f0-4365-ab25-fc1c2664b4ba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME FINANCEIRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="0" width="88" height="15" forecolor="#7A7A7A" uuid="4a51d14c-0917-457a-8b98-0aeaa0e85fb5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRATOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="552" y="0" width="88" height="15" forecolor="#7A7A7A" uuid="bbe77280-74cc-40ec-b326-5f216f3e3e7d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADITIVOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="10" y="0" width="630" height="15" isRemoveLineWhenBlank="true" forecolor="#EDEDED" backcolor="#EDEDED" uuid="4882aec2-5507-4194-94a5-be2f1cc45d0d"/>
+			</rectangle>
+			<textField>
+				<reportElement x="552" y="0" width="88" height="15" forecolor="#7A7A7A" uuid="c8da0930-85e5-4a52-8806-92e60bf5560f"/>
+				<box leftPadding="5" rightPadding="6">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numAditivos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="0" width="88" height="15" forecolor="#7A7A7A" uuid="59b6ccc6-bcc5-4ed0-b369-7ce4f993e293"/>
+				<box leftPadding="5" rightPadding="6">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numContratos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="0" width="368" height="15" forecolor="#7A7A7A" uuid="148310f1-9ce4-47f8-bad4-d793dcf63024"/>
+				<box leftPadding="5">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomeFinanceira}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="86" height="15" forecolor="#7A7A7A" uuid="93912357-3ea2-4c7f-860f-4b04c45ac593"/>
+				<box leftPadding="5">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codFinanceira}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="24" width="627" height="30" uuid="a58c6341-a34f-487c-9efb-cde1b18a5fd3"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[AUTTIS.RC: 78DASDKJH2KJH234K2JH34234JKH2342K34JH234KLJ2H34324
+Data de Emissao: 05 de Outubro de 2018 às 15:52:36 - IP:187.58.93.87]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="153">
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="10" y="70" width="630" height="15" forecolor="#EDEDED" backcolor="#EDEDED" uuid="0ad71063-4db5-4a06-b0ec-858d90d160ea"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="20" width="362" height="20" forecolor="#000000" uuid="48201caf-044b-40a6-ba72-7ef706870b29"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSOLIDAÇÃO TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="55" width="157" height="15" forecolor="#7A7A7A" uuid="e709c9ad-dd46-4c4c-8a3e-a6fd2411805c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANT. DE FINANCEIRAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="55" width="157" height="15" forecolor="#7A7A7A" uuid="591a67df-9d6e-48ad-aa67-47ca9e8715a2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANT. DE CONTRATOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="55" width="157" height="15" forecolor="#7A7A7A" uuid="2bb01f81-3161-4d27-98d7-4b6c1458dafd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANT. DE ADITIVOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="55" width="159" height="15" forecolor="#7A7A7A" uuid="119a47db-9057-43f4-8517-f30a4af83ec1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89a9ba67-34bb-4efb-901a-6aab64579381"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineColor="#C9C9C9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANT. TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="167" y="70" width="157" height="15" forecolor="#7A7A7A" backcolor="rgba(237, 237, 237, 0.0)" uuid="e7a6d30c-9f8e-44dc-bd3b-748379be7065"/>
+				<box>
+					<pen lineColor="#C9C9C9"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{QUANT_CONTRATOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="70" width="157" height="15" forecolor="#7A7A7A" backcolor="rgba(237, 237, 237, 0.0)" uuid="34034848-0b08-4a5f-8224-a846e180edb6"/>
+				<box>
+					<pen lineColor="#C9C9C9"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{QUANT_ADITIVOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="70" width="159" height="15" forecolor="#7A7A7A" backcolor="rgba(237, 237, 237, 0.0)" uuid="a09c4d7c-f209-4a33-85b6-17114b14f2e6"/>
+				<box>
+					<pen lineColor="#C9C9C9"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SOMA_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="10" y="70" width="157" height="15" forecolor="#7A7A7A" backcolor="rgba(237, 237, 237, 0.0)" uuid="f93971d0-0e55-492a-9e51-13f9482ed25d"/>
+				<box>
+					<pen lineColor="#C9C9C9"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#C9C9C9"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SOMA_INSTITUICAO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="120" width="650" height="30" uuid="b936783a-ba49-4607-97db-92b6ee37f242"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["AUTTIS.RC: "+ $P{HASH_RELATORIO}+"\nData de Emissao: "+$P{DATA_POR_EXTENSO}+ " - IP:"+$P{IP_MAQUINA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>
