@@ -2,10 +2,8 @@ package com.consulta.fipe.model;
 
 import java.io.Serializable;
 
-public class Veiculo implements Serializable{
+public class Marca implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
-
 	private String id;
 	
 	private String name;
@@ -25,4 +23,8 @@ public class Veiculo implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	
+	
 }

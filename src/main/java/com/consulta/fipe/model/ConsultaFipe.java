@@ -6,9 +6,9 @@ public class ConsultaFipe {
 	
 	private String ano;
 	
-	private BigDecimal valor;
+	private String valor;
 	
-	private BigDecimal valorAnterior;
+	private String diferencaValor;
 	
 	private String porcentagem;
 
@@ -20,22 +20,6 @@ public class ConsultaFipe {
 		this.ano = ano;
 	}
 
-	public BigDecimal getValor() {
-		return valor;
-	}
-
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
-	}
-
-	public BigDecimal getValorAnterior() {
-		return valorAnterior;
-	}
-
-	public void setValorAnterior(BigDecimal valorAnterior) {
-		this.valorAnterior = valorAnterior;
-	}
-
 	public String getPorcentagem() {
 		return porcentagem;
 	}
@@ -43,6 +27,21 @@ public class ConsultaFipe {
 	public void setPorcentagem(String porcentagem) {
 		this.porcentagem = porcentagem;
 	}
-	
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public String getDiferencaValor() {
+		return diferencaValor;
+	}
+
+	public void setDiferencaValor(String diferencaValor) {
+		this.diferencaValor = diferencaValor;
+	}
 	
 }	

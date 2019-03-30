@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.consulta.fipe.model.ConsultaFipe;
+import com.consulta.fipe.model.Marca;
 import com.consulta.fipe.model.Veiculo;
 import com.consulta.fipe.service.ConsultaFipeService;
 
@@ -21,7 +23,17 @@ public class ConsultaFipeController {
 	ConsultaFipeService consultaFipeService;
 	
 	@GetMapping("/marca/{idMarca}/modelo/{idModelo}")
-	public ResponseEntity<String> findFipe(@PathVariable() Integer idMarca, @PathVariable() Integer idModelo) {
-		return consultaFipeService.find(idMarca, idModelo);
+	public ResponseEntity<List<ConsultaFipe>> findFipe(@PathVariable() Integer idMarca, @PathVariable() Integer idModelo) {
+		return consultaFipeService.findFipe(idMarca, idModelo);
+	}
+	
+	@GetMapping("/marcas")
+	public ResponseEntity<List<Marca>> findMarcas() {
+		return consultaFipeService.getMarcas();
+	}
+	
+	@GetMapping("/veiculos/{idMarca}")
+	public ResponseEntity<List<Veiculo>> findVeiculos(@PathVariable() Integer idMarca) {
+		return consultaFipeService.getVeiculos(idMarca);
 	}
 }

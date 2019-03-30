@@ -19,7 +19,7 @@ public class VeiculoDetalhe implements Serializable{
 	
 	private String ano_modelo;
 	
-	private BigDecimal preco;
+	private String preco;
 	
 	private String key;
 	
@@ -76,12 +76,12 @@ public class VeiculoDetalhe implements Serializable{
 	public void setAno_modelo(String ano_modelo) {
 		this.ano_modelo = ano_modelo;
 	}
-
-	public BigDecimal getPreco() {
+	
+	public String getPreco() {
 		return preco;
 	}
 
-	public void setPreco(BigDecimal preco) {
+	public void setPreco(String preco) {
 		this.preco = preco;
 	}
 
