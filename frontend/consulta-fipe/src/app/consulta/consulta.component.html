@@ -13,7 +13,7 @@
     </div>
     <div class="col-sm-6">
       <label>Modelo</label>
-      <select [(ngModel)]="idVeiculo" name="veiculo" class="form-control" (click)="buscarFipe()">
+      <select [(ngModel)]="idVeiculo" name="veiculo" class="form-control" (change)="buscarFipe()">
         <option *ngFor="let item of veiculos" [ngValue]="item.id">{{item.name}}</option>
       </select>
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaFipeService } from '../service/consulta-fipe.service'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-consulta',
@@ -15,6 +16,7 @@ export class ConsultaComponent implements OnInit {
   detalhes = []
   idMarca = null;
   idVeiculo = null;
+  
   ngOnInit() {
     this.service.getMarcas().subscribe(result => {
       this.marcas = result;
@@ -22,13 +24,27 @@ export class ConsultaComponent implements OnInit {
   }
 
   onChangeMarca(){
+    
+    this.detalhes = [];
+    Swal.fire({
+      type: 'info',
+      title: 'Aguarde...',
+      showConfirmButton: false
+    });
     this.service.getVeiculos(this.idMarca).subscribe(result => {
+      Swal.close();
       this.veiculos = result;
     });
   }
 
   buscarFipe(){
+    Swal.fire({
+      type: 'info',
+      title: 'Aguarde...',
+      showConfirmButton: false
+    });
     this.service.getDetalhe(this.idMarca, this.idVeiculo).subscribe(result => {
+      Swal.close();
       this.detalhes = result;
     });
   }
